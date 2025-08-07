@@ -34,7 +34,7 @@ nav a:hover::after {
 body {
   font-family: 'Work Sans', sans-serif;
   background-color: rgb(49, 93, 133);
-  background-image: url('/final/fondo.jpg');
+  background-image: url('fondo.jpg');
   background-size: cover;        
   background-position: center;    
   background-repeat: repeat;   
@@ -268,6 +268,7 @@ img {
 .slide.active {
   display: block;
 }
+
 
 
 
