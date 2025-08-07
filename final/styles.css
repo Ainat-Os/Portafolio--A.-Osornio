@@ -1,0 +1,276 @@
+/* -------------------- NAVEGACIÓN -------------------- */
+nav a { 
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  color: #415ec8;
+  text-decoration: none;
+  margin-right: 1.5rem;
+  position: relative;
+  padding-bottom: 0.2rem;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #162f45; /* Azul intenso */
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: white; /* Se vuelve blanco */
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+/* -------------------- BODY -------------------- */
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: rgb(49, 93, 133);
+  background-image: url('/final/fondo.jpg');
+  background-size: cover;        
+  background-position: center;    
+  background-repeat: repeat;   
+  color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* Blanco con transparencia */
+  z-index: -1;
+} 
+.footer {
+  background-color: rgba(22, 47, 69, 0.6); 
+  color: white;               
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(22, 47, 69, 0.6);
+}
+
+
+
+/* -------------------- TEXTO-------------------- */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #0e0a39;
+}
+
+p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #212121;
+  margin-bottom: 1rem;
+}
+
+strong, em {
+  color: #151940;
+} 
+.softwares {
+  list-style-type: disc;
+  padding-left: 2rem;
+  font-size: 1.1rem;
+  color: #151940;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}   
+
+.centrado {
+  text-align: center;
+}
+
+/* -------------------- LISTAS -------------------- */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+
+/* -------------------- IMÁGENES -------------------- */
+img {
+  max-width: 90%;
+  height: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.yo {
+  float: left;
+  width: 300px;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+} 
+.grupo {
+  display: block;
+  margin: 3em auto; 
+  max-width: 60%;    
+  height: auto;      
+  border-radius: 8px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+} 
+.tv {
+  float: right;
+  width: 300px;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+} 
+
+.carrusel {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.carrusel h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 15rem;
+  color: #0e0a39;
+} 
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #162f45;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  opacity: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+} 
+/* -------------------- lightbox -------------------- */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  max-width: 90%;
+}
+
+.lightbox-slide {
+  display: none;
+  width: auto;
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lightbox .prev,
+.lightbox .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-size: 30px;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.lightbox .prev {
+  left: 0;
+}
+
+.lightbox .next {
+  right: 0;
+} 
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.slide.active {
+  display: block;
+}
+
+
+
+
+
+
